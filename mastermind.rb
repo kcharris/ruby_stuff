@@ -100,7 +100,7 @@ module Mastermind
             puts "Score is Player: #{@player_score} vs Computer: #{@computer_score}"
           end
           @guesses_left = 12
-          puts "Coder loses! Starting new game"
+          puts "Coder wins! Starting new game"
           self.new_game
         elsif @game_type == "guess"
           puts self.feedback(@choice)
