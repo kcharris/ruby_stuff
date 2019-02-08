@@ -5,6 +5,3 @@ which of the guessed code is correct. Those two feedback pieces represent: 1. th
 correct spot in the right color, 2. and the correct piece played in the wrong position. If there are more of
 one type of guessed piece than there are of that type piece in the code then the extra pieces will not be
 awarded feedback.
-
-For example. Pieces 1..6 for a code 123154 and a guess of 443456 feedback could be 201010.
-
