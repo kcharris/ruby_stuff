@@ -60,6 +60,39 @@ def breadth_first_search(target_value, root_node)
   return true
 end
 
+def depth_first_search(target_value, root_node)
+  stack = [root_node]
+  while stack[0].value != target_value
+    last = stack.shift
+    if last.child_node0 != nil
+      stack.unshift(last.child_node0)
+    end
+    if last.child_node1 != nil
+      stack.unshift(last.child_node1)
+    end
+    if stack.empty?
+      return nil
+    end
+  end
+  return true
+end
+
+def dfs_rec(target_value, node)
+  if node.child_node0 != nil
+    a = dfs_rec(target_value, node.child_node0)
+  end
+  if node.child_node1 != nil
+    b = dfs_rec(target_value, node.child_node1)
+  end
+  if node.value == target_value
+    return true
+  elsif a || b
+    return true
+  else
+    return nil
+  end
+end
+
 arr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]
 root_node = build_tree(arr)
-print breadth_first_search(67, root_node)
+print dfs_rec(1, root_node)
